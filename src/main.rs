@@ -1,33 +1,4 @@
 use std::process::Command;
-
-/*
-gc() {
-    if rg -q "://" <<< "$1"; then
-        url="$1"
-    else
-        url="https://github.com/$1"
-    fi
-
-    if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "help" ]; then
-        printf """\
-#git clone on rails
-  for more info, cat ~/s/help_scripts/git.sh
-
-  ex: gc neovim/neovim
-"""
-        return 0
-    elif [ "$#" = 1 ]; then
-        split_array=$(echo "$1" | tr "/" "\n")
-        filename=$(echo "$split_array" | tail -n 1)
-        cd /tmp && rm -rf ./${filename} && git clone --depth=1 "$url" 1>&2
-        cd "$filename"
-        echo $(pwd)
-    elif [ "$#" = 2 ]; then
-        git clone --depth=1 "$url" $2
-    fi
-}
-
-* */
 fn main() {
     let input = std::env::args().nth(1).expect("expected 1 arg");
     "https://github.com/Valera6/dots/blob/master/home/v/s/help_scripts/git.sh";
